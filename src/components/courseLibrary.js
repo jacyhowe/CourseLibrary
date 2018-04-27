@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect, dispatch } from 'react-redux';
+import { fetchCourses } from '../actions'
 
  class CourseLibrary extends Component {
     
@@ -10,16 +11,20 @@ import { connect } from 'react-redux';
 
             }
 
+            componentDidMount() {
+                this.props.fetchCourses()
+            }
+
         renderCourse(course) {
             return ( 
                 <li key={course.title} className="course">
-                    <div className="course_info">
-                        <div className="course_title-container">
-                            <div className="course_title">{course.title}</div>
+                    <div className="course-info">
+                        <div className="course-title-container">
+                            <div className="course-title">{course.title}</div>
                         </div>
                     </div>
-                    <div className="course_description">
-                        <h6 className="course_description-title">Course Description</h6>
+                    <div className="course-description">
+                        <h6 className="course-description-title">Course Description</h6>
                         <p>{course.description}</p>
                     </div>        
                         
@@ -28,9 +33,9 @@ import { connect } from 'react-redux';
         }
 
         render() {
+
             return (
-                <ul>
-                    
+                <ul>                   
                     {this.props.courses.map(this.renderCourse)}
                 </ul>
             )
@@ -38,8 +43,17 @@ import { connect } from 'react-redux';
     }    
 
 function mapStateToProps(state) {
-    console.log(`state courses are : ${JSON.stringify(state)}`)
+    console.log(`state courses are : ${JSON.stringify(state.courses)}`)
     return { courses: state.courses }
 }
 
-export default connect(mapStateToProps)(CourseLibrary);
+function mapDispatchToProps(dispatch) {
+        return {
+            fetchCourses: () => {
+                dispatch(fetchCourses())
+        }
+    }  
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CourseLibrary);
