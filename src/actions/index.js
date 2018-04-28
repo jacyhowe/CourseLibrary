@@ -1,4 +1,7 @@
-import { FETCH_COURSES } from './types';
+import { FETCH_COURSES, 
+        REMOVE_COURSE } 
+        from './types';
+
 
 export function fetchCourses() {
     return {
@@ -14,4 +17,13 @@ export function fetchCourses() {
             }
         ]
     }
+}
+
+
+export function removeCourse(course) {
+    return {
+        type: REMOVE_COURSE,
+        payload: course
+    }
+
 }
