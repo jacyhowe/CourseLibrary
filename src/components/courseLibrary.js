@@ -21,6 +21,10 @@ import { fetchCourses } from '../actions'
                     <div className="course-info">
                         <div className="course-title-container">
                             <div className="course-title">{course.title}</div>
+                            <a>arrow</a>
+                            <a className={`action ${course.enrolled ? 'hide-content' : 'show-content'}`} onClick={() => this.props.removeCourse(course)}>add</a>
+                            <a className={`action ${course.enrolled ? 'show-content' : 'hide-content'}`} onClick={() => this.props.removeCourse(course)}>remove</a>
+
                         </div>
                     </div>
                     <div className="course-description">
@@ -51,6 +55,12 @@ function mapDispatchToProps(dispatch) {
         return {
             fetchCourses: () => {
                 dispatch(fetchCourses())
+        },
+        addCourse:(course) => {
+            dispatch(addCourse(course))
+        },
+        removeCourse:(course) => {
+            dispatch(removeCourse(course))
         }
     }  
 }

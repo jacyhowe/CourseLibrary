@@ -41,8 +41,8 @@ function mapDispatchToProps(dispatch) {
     return {
         removeCourse: (course) => {
             dispatch(removeCourse(course))
+        }
     }
-}  
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Schedule);
