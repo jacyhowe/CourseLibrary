@@ -1,7 +1,9 @@
-import { FETCH_COURSES, 
+import { 
+        FETCH_COURSES, 
         REMOVE_COURSE, 
         ADD_COURSE,
-        TOGGLE_DESCRIPTION} 
+        TOGGLE_DESCRIPTION
+    } 
         from './types';
 
 
@@ -24,49 +26,49 @@ export function fetchCourses() {
             {   "title": "HTML/CSS Bootcamp",
                 "description": "Learn HTML5 and CSS3 from scratch, starting with the basics and finishing by building five projects from scratch.",
                 "enrolled": false,
-                "open": false
+                "open": false,
             },
             {   
                 "title": "Problem Solving",
                 "description": "In this course you'll take a practical look at how to build a large number of software applications and features. By taking a systems analysis and design approach to development and leveraging UML, you'll be able to model systems and prepare to build the projects.",
                 "enrolled": false,
-                "open": false
+                "open": false,
             },
             { 
                 "title": "UML for developers",
                 "description": "This course teaches the foundational building blocks of utilizing UML in order to model software systems.",
                 "enrolled": false,
-                "open": false
+                "open": false,
             },
             {
                 "title": "Algorithm Bootcamp",
-                "description": "In this depth course you will learn how to work with algorithms, including: how to measure their performance, understanding data structures, and implementing all of the algorithms in code,",
+                "description": "In this depth course you will learn how to work with algorithms, including: how to measure their performance, understanding data structures, and implementing all of the algorithms in code.",
                 "enrolled": false,
-                "open": false
+                "open": false,
             },
             {
                 "title": "Introduction to Programming with Python",
                 "description": "This course teaches the fundamentals of programming and utilizes the Python programming language",
                 "enrolled": false,
-                "open": false
+                "open": false,
             },
             {
                 "title": "Typescript Development",
                 "description": "This course gives an introduction to the TypeScript programming language, including walking through the: syntax, best practices, and practical systems for building TypeScript programs.",
                 "enrolled": false,
-                "open": false
+                "open": false,
             },
             {
                 "title": "Introduction to JavaScript",
                 "description": "This course gives an introduction to the ...",
                 "enrolled": false,
-                "open": false
+                "open": false,
             },
             {
                 "title": "Dissecting Rails 5",
                 "description": "In this depth course you will learn...",
                 "enrolled": false,
-                "open": false
+                "open": false,
             }
         ]
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect, dispatch } from 'react-redux';
-import { fetchCourses, addCourse, removeCourse, toggleDescription } from '../actions'
-import AnimateHeight from 'react-animate-height'
+import { fetchCourses, addCourse, removeCourse, toggleDescription } from '../actions';
+import AnimateHeight from 'react-animate-height';
 
  class CourseLibrary extends Component {
     
@@ -26,7 +26,7 @@ import AnimateHeight from 'react-animate-height'
                             <a className={`course-arrow ${course.open ? null : 'course-arrow-close'}`} onClick={() => this.props.toggleDescription(course)}></a>
                             <a className={`action ${course.enrolled ? 'hide-content' : 'show-content'}`} onClick={() => this.props.addCourse(course)}>add</a>
                             <a className={`action ${course.enrolled ? 'show-content' : 'hide-content'}`} onClick={() => this.props.removeCourse(course)}>remove</a>
-                        </div>
+                    </div>
                     
                     <AnimateHeight
                         duration={ 300 }
@@ -53,8 +53,7 @@ import AnimateHeight from 'react-animate-height'
     }    
 
 function mapStateToProps(state) {
-    console.log(`state courses are : ${JSON.stringify(state.courses)}`)
-    return { courses: state.courses }
+       return { courses: state.courses }
 }
 
 function mapDispatchToProps(dispatch) {
