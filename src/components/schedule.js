@@ -37,10 +37,12 @@ class Schedule extends Component {
         nextProps.courses.map((course) => {
             if(course.enrolled && !newEnrolled.includes(course)) {
                 console.log(course.title);
-                newEnrolled.push(course)
+                newEnrolled.push(course);
             }  
         })
-        for(var i = newEnrolled.length; i < 5; i++)
+        for(var i = newEnrolled.length; i < 5; i++) {
+            newEnrolled.push({enrolled: false})
+        }
         this.setState ({
             enrolled: newEnrolled
         })
