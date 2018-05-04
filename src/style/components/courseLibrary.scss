@@ -44,3 +44,31 @@
     min-height: 60px;
     transition: all .4s ease;
 }
+
+.course-check-mark {
+    &:after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 20px;
+        margin-left: 18px;
+    
+        transform: rotate(45deg);
+        border: solid #487bce;
+        border-width: 0 2.5px 2.5px 0;
+        
+    }
+    
+}
+
+.show-check-mark {
+    transition: all .2s ease;
+}
+
+.hide-check-mark {
+    opacity: 0;
+    transform: scale(.8) translateX(-10px);
+    transition: all .2s ease;
+    
+    
+}

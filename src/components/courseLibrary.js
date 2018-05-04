@@ -22,6 +22,7 @@ import AnimateHeight from 'react-animate-height';
                     <div className="course-info">
                         <div className="course-title-container">
                             <div className="course-title">{course.title}</div>
+                            <div className={`course-check-mark ${course.enrolled ? 'show-check-mark' : 'hide-check-mark'}`}></div>
                         </div>
                             <a className={`course-arrow ${course.open ? null : 'course-arrow-close'}`} onClick={() => this.props.toggleDescription(course)}></a>
                             <a className={`action ${course.enrolled ? 'hide-content' : 'show-content'}`} onClick={() => this.props.addCourse(course)}>add</a>
