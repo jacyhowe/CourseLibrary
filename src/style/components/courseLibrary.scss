@@ -86,6 +86,7 @@
     width: 26px;
     border-radius: 13px;
     position: relative;
+    
 
     &:after,
     &:before {
@@ -93,6 +94,7 @@
         display: block;
         background-color: white;
         @include position-center; 
+        transition: all .4s ease;
 
     }
 
@@ -113,12 +115,13 @@
 
 .course-remove {
     @include add-button;
+    //transform: rotate(45deg);
 
     &:before {
         transform: translate(-50%, -50%) rotate(45deg);
     }
 
     &:after {
-        transform: translate(-50%, -50%) rotate(45deg);
+        transform: translate(-50%, -50%) rotate(-135deg);
     }
 }

@@ -25,8 +25,8 @@ import AnimateHeight from 'react-animate-height';
                             <div className={`course-check-mark ${course.enrolled ? 'show-check-mark' : 'hide-check-mark'}`}></div>
                         </div>
                             <a className={`course-arrow ${course.open ? null : 'course-arrow-close'}`} onClick={() => this.props.toggleDescription(course)}></a>
-                            <a className={`course-add action ${course.enrolled ? 'hide-content' : 'show-content'}`} onClick={() => this.props.addCourse(course)}></a>
-                            <a className={`course-remove action ${course.enrolled ? 'show-content' : 'hide-content'}`} onClick={() => this.props.removeCourse(course)}></a>
+                            <a className={`course-add action ${course.enrolled ? 'course-remove' : 'course-add'}`} onClick={() => course.enrolled ? this.props.remove(course) : this.props.addCourse(course)}></a>
+                           {/*} <a className={`course-remove action ${course.enrolled ? 'show-content' : 'hide-content'}`} onClick={() => this.props.removeCourse(course)}></a>*/}
                     </div>
                     
                     <AnimateHeight
@@ -65,7 +65,7 @@ function mapDispatchToProps(dispatch) {
         addCourse:(course) => {
             dispatch(addCourse(course))
         },
-        removeCourse:(course) => {
+        remove:(course) => {
             dispatch(removeCourse(course))
         },
         toggleDescription:(course) => {
